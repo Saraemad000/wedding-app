@@ -1,0 +1,300 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1e1d1d;
+  background: #f7f0ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --ivory: #f5efe9;
+  --ivory-deep: #efe7df;
+  --sand: #d7c4a7;
+  --gold: #b8925d;
+  --ink: #282420;
+  --rose: #b88a7c;
+  --mist: #f9f7f4;
+  --shadow-soft: 0 18px 40px rgba(36, 24, 14, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(180deg, #f8f2ef 0%, #eee5dd 100%);
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.invitation-card {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+}
+
+.soft-border {
+  border: 1px solid rgba(89, 75, 59, 0.12);
+}
+
+.gold-line {
+  position: relative;
+}
+
+.gold-line::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -12px 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 146, 93, 0.9), transparent);
+}
+
+.gallery-image {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.02);
+}
+
+.photo-showcase {
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-showcase::before,
+.photo-showcase::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.photo-showcase::before {
+  background: linear-gradient(90deg, rgba(247, 240, 235, 0.98) 0%, rgba(247, 240, 235, 0) 8%, rgba(247, 240, 235, 0) 92%, rgba(247, 240, 235, 0.98) 100%);
+}
+
+.photo-showcase-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: max-content;
+  min-width: 100%;
+  animation: photo-marquee 34s linear infinite;
+}
+
+.showcase-item {
+  flex: 0 0 auto;
+  width: min(28vw, 320px);
+  min-width: 220px;
+  opacity: 0.9;
+  transform: scale(0.96);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.showcase-item:nth-child(odd) {
+  transform: translateY(8px) scale(0.97);
+}
+
+.showcase-item:nth-child(even) {
+  transform: translateY(-8px) scale(0.97);
+}
+
+.showcase-item:hover {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes photo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.floral-corner {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+  opacity: 0.86;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(197, 150, 103, 0.2), transparent 45%),
+    linear-gradient(135deg, rgba(170, 138, 104, 0.12), rgba(119, 90, 71, 0.12));
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+.floral-corner-left {
+  left: -26px;
+  top: 54px;
+  transform: rotate(-10deg);
+}
+
+.floral-corner-right {
+  right: -26px;
+  top: 54px;
+  transform: rotate(10deg) scaleX(-1);
+}
+
+.intro-floral-crest {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 84px;
+  margin: 0 auto 0.25rem;
+  opacity: 0.9;
+  background:
+    radial-gradient(circle at 22% 52%, rgba(220, 192, 160, 0.95) 0 12%, transparent 13%),
+    radial-gradient(circle at 36% 38%, rgba(201, 163, 123, 0.9) 0 16%, transparent 17%),
+    radial-gradient(circle at 71% 48%, rgba(224, 198, 162, 0.9) 0 15%, transparent 16%),
+    radial-gradient(circle at 55% 58%, rgba(166, 122, 90, 0.82) 0 12%, transparent 13%),
+    linear-gradient(90deg, transparent 0%, rgba(168, 129, 96, 0.15) 48%, transparent 100%);
+  border-radius: 50%;
+}
+
+.church-backdrop {
+  position: absolute;
+  inset: 14% 0 auto 0;
+  height: 62%;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%),
+    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0) 45%);
+  filter: blur(1px);
+}
+
+.church-backdrop {
+  position: absolute;
+  inset: 14% 0 auto 0;
+  height: 62%;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%),
+    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0) 45%);
+  filter: blur(1px);
+}
+
+
+.church-backdrop::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  width: min(72vw, 980px);
+  height: 84%;
+  transform: translateX(-50%);
+  background: rgba(18, 15, 14, 0.22);
+  clip-path: polygon(12% 100%, 12% 52%, 24% 52%, 24% 34%, 36% 34%, 36% 22%, 46% 22%, 46% 8%, 54% 8%, 54% 22%, 64% 22%, 64% 34%, 76% 34%, 76% 52%, 88% 52%, 88% 100%);
+}
+
+.church-backdrop::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(80vw, 1100px);
+  height: 48%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, rgba(18, 15, 14, 0.16));
+  clip-path: polygon(0 100%, 0 64%, 10% 64%, 10% 54%, 18% 54%, 18% 42%, 27% 42%, 27% 56%, 34% 56%, 34% 48%, 42% 48%, 42% 38%, 50% 38%, 50% 20%, 58% 20%, 58% 38%, 66% 38%, 66% 48%, 73% 48%, 73% 56%, 82% 56%, 82% 42%, 90% 42%, 90% 54%, 100% 54%, 100% 100%);
+}
+
+.reference-intro {
+  position: relative;
+}
+
+.reference-intro-inner {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.floral-corner {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.floral-corner::before,
+.floral-corner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 89, 59, 0.28);
+  transform: rotate(18deg);
+}
+
+.floral-corner::before {
+  box-shadow:
+    0 0 0 12px rgba(180, 142, 97, 0.08),
+    0 0 0 28px rgba(180, 142, 97, 0.04),
+    0 0 0 44px rgba(180, 142, 97, 0.02);
+}
+
+.floral-corner::after {
+  transform: rotate(-18deg);
+  box-shadow:
+    12px 0 0 0 rgba(180, 142, 97, 0.12),
+    -12px 0 0 0 rgba(180, 142, 97, 0.12),
+    0 12px 0 0 rgba(180, 142, 97, 0.12),
+    0 -12px 0 0 rgba(180, 142, 97, 0.12);
+}
+
+.floral-corner-left {
+  left: -20px;
+}
+
+.floral-corner-right {
+  right: -20px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}

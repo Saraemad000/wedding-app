@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Wedding invitation preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7efe9"/>
+      <stop offset="100%" stop-color="#efe1d3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#b8925d"/>
+      <stop offset="100%" stop-color="#d2b48c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="230" cy="120" r="160" fill="#fffdfb" opacity="0.55"/>
+  <circle cx="960" cy="120" r="190" fill="#fffdfb" opacity="0.35"/>
+  <g fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.9">
+    <path d="M350 470c120-160 270-220 420-220s270 60 420 220" stroke-linecap="round"/>
+    <path d="M410 120c70 50 110 130 165 145c25 7 46 17 70 20" stroke-linecap="round"/>
+    <path d="M790 120c-70 50-110 130-165 145c-25 7-46 17-70 20" stroke-linecap="round"/>
+  </g>
+  <g fill="#b8925d" opacity="0.85">
+    <circle cx="330" cy="220" r="12"/>
+    <circle cx="870" cy="220" r="12"/>
+    <circle cx="355" cy="245" r="8"/>
+    <circle cx="845" cy="245" r="8"/>
+  </g>
+  <text x="600" y="270" text-anchor="middle" font-size="26" font-family="Georgia, serif" letter-spacing="10" fill="#7b6253">SAVE THE DATE</text>
+  <text x="600" y="360" text-anchor="middle" font-size="96" font-family="Georgia, serif" fill="#2d2724">Forever</text>
+  <text x="600" y="440" text-anchor="middle" font-size="34" font-family="Georgia, serif" letter-spacing="10" fill="#7b6253">December 27, 2026</text>
+  <rect x="440" y="480" width="320" height="56" rx="28" fill="url(#accent)"/>
+  <text x="600" y="518" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" letter-spacing="8" fill="#fff">JOIN US</text>
+</svg>
